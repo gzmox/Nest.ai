@@ -3,36 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nest.ai – Parenting Assistant</title>
+  <title>Nest.ai – Parenting Copilot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>Welcome to Nest.ai 👶</header>
+  <div class="container">
+    <header>
+      <h1>Nest.ai</h1>
+      <p>Your AI copilot for parenting</p>
+    </header>
 
-  <div class="dashboard">
+    <section class="card baby-overview">
+      <h2>👶 Baby Overview</h2>
+      <ul>
+        <li><strong>Age:</strong> 3 weeks</li>
+        <li><strong>Last Feeding:</strong> 1 hour ago</li>
+        <li><strong>Sleep (Last Night):</strong> 9.5 hours</li>
+        <li><strong>Weight:</strong> 8.2 lbs</li>
+      </ul>
+    </section>
 
-    <div class="stats">
-      <h3>👶 Baby Overview</h3>
-      <div><strong>Age:</strong> 3 weeks</div>
-      <div><strong>Last Feeding:</strong> 1 hour ago</div>
-      <div><strong>Sleep (Last Night):</strong> 9.5 hours</div>
-      <div><strong>Weight:</strong> 8.2 lbs</div>
-    </div>
+    <section class="card tip">
+      🌱 <strong>Tip of the Day:</strong> Skin-to-skin time can help regulate your baby's body temperature and boost bonding.
+    </section>
 
-    <div class="tip">
-      🌼 <strong>Daily Tip:</strong> It’s normal for newborns to wake often. Try skin-to-skin time to help soothe your baby today.
-    </div>
-
-    <div class="chat">
-      <h3>🧠 Ask Nest.ai</h3>
-      <div class="chat-log" id="chatLog">
+    <section class="card chat">
+      <h2>🧠 Ask Nest.ai</h2>
+      <div id="chatLog" class="chat-log">
         <div class="ai">Hi! I’m here to help. Ask me anything about your baby.</div>
       </div>
-      <input type="text" id="userInput" placeholder="e.g., Is this much crying normal?" />
-      <button onclick="sendMessage()">Ask</button>
-    </div>
-
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Ask</button>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>
