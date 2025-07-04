@@ -1,0 +1,70 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #fdfaf7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background: #ffc8a2;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.stats, .tip, .chat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.stats div {
+  margin: 6px 0;
+}
+
+.tip {
+  background: #e6f7f2;
+  font-style: italic;
+}
+
+.chat input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.chat button {
+  padding: 10px 14px;
+  background: #ffc8a2;
+  border: none;
+  border-radius: 8px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.chat-log {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.95em;
+}
+
+.user {
+  text-align: right;
+  color: #555;
+}
+
+.ai {
+  text-align: left;
+  color: #2b7a78;
+}
