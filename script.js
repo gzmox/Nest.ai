@@ -24,10 +24,10 @@ function sendMessage() {
 function generateFakeResponse(message) {
   const msg = message.toLowerCase();
   if (msg.includes("crying")) {
-    return "It's normal for newborns to cry 2–3 hours per day. If the cry sounds different or baby seems in pain, consult your pediatrician.";
+    return "Newborns often cry 2–3 hours a day. It’s normal, but keep an eye out for patterns or pain indicators.";
   } else if (msg.includes("fever")) {
-    return "Any fever over 100.4°F (38°C) in a baby under 3 months should be checked by a doctor immediately.";
+    return "For babies under 3 months, a fever over 100.4°F (38°C) means you should call your doctor right away.";
   } else {
-    return "Thanks for your question! This is something many parents ask. I recommend observing patterns and reaching out to your pediatrician if unsure.";
+    return "That’s a great question! Try tracking it and let me know if it continues. I’m here to help!";
   }
 }
