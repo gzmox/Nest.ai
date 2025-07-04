@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nest.ai – Parenting Assistant</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fdfaf7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #ffc8a2;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      padding: 20px;
+    }
+
+    .stats, .tip, .chat {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .stats div {
+      margin: 6px 0;
+    }
+
+    .tip {
+      background: #e6f7f2;
+      font-style: italic;
+    }
+
+    .chat input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .chat button {
+      padding: 10px 14px;
+      background: #ffc8a2;
+      border: none;
+      border-radius: 8px;
+      margin-left: 6px;
+      cursor: pointer;
+    }
+
+    .chat-log {
+      margin-top: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 0.95em;
+    }
+
+    .user {
+      text-align: right;
+      color: #555;
+    }
+
+    .ai {
+      text-align: left;
+      color: #2b7a78;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Welcome to Nest.ai 👶</header>
+
+  <div class="dashboard">
+
+    <div class="stats">
+      <h3>👶 Baby Overview</h3>
+      <div><strong>Age:</strong> 3 weeks</div>
+      <div><strong>Last Feeding:</strong> 1 hour ago</div>
+      <div><strong>Sleep (Last Night):</strong> 9.5 hours</div>
+      <div><strong>Weight:</strong> 8.2 lbs</div>
+    </div>
+
+    <div class="tip">
+      🌼 <strong>Daily Tip:</strong> It’s normal for newborns to wake often. Try skin-to-skin time to help soothe your baby today.
+    </div>
+
+    <div class="chat">
+      <h3>🧠 Ask Nest.ai</h3>
+      <div class="chat-log" id="chatLog">
+        <div class="ai">Hi! I’m here to help. Ask me anything about your baby.</div>
+      </div>
+      <input type="text" id="userInput" placeholder="e.g., Is this much crying normal?" />
+      <button onclick="sendMessage()">Ask</button>
+    </div>
+
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatLog = document.getElementById("chatLog");
+      const userMessage = input.value.trim();
+
+      if (!userMessage) return;
+
+      // Show user message
+      const userBubble = document.createElement("div");
+      userBubble.className = "user";
+      userBubble.textContent = userMessage;
+      chatLog.appendChild(userBubble);
+
+      // Fake AI response
+      const aiBubble = document.createElement("div");
+      aiBubble.className = "ai";
+      aiBubble.textContent = generateFakeResponse(userMessage);
+      chatLog.appendChild(aiBubble);
+
+      input.value = "";
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    function generateFakeResponse(message) {
+      // Simulate very basic "AI"
+      if (message.toLowerCase().includes("crying")) {
+        return "It's normal for newborns to cry 2–3 hours per day. If the cry sounds different or baby seems in pain, consult your pediatrician.";
+      } else if (message.toLowerCase().includes("fever")) {
+        return "Any fever over 100.4°F (38°C) in a baby under 3 months should be checked by a doctor immediately.";
+      } else {
+        return "Thanks for your question! This is something many parents ask. I recommend observing patterns and reaching out to your pediatrician if unsure.";
+      }
+    }
+  </script>
+
+</body>
+</html>
